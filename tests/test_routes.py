@@ -1,6 +1,6 @@
 import pytest 
 
-def test_get_all_planets(client):
+def test_add_two_planets(client):
     #Act
     response = client.get("/planets")
     response_body = response.get_json()
