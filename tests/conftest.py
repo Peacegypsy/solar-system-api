@@ -22,3 +22,9 @@ def add_two_planets(app):
     neptune = Planet(name="neptune",description="Big love more")
     db.session.add_all([venus,neptune])
     db.session.commit()
+    
+@pytest.fixture
+def get_one_planet(app):
+    jupiter = Planet(name="Jupiter",description="An amazing planet of incredible size.")
+    db.session.add_all([jupiter])
+    db.session.commit()    
