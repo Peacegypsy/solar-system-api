@@ -26,6 +26,8 @@ def handle_planets():
         return jsonify(planets_response)
     elif request.method == "POST":
         request_body = request.get_json()
+        name = request_body.get("name")
+        description = request_body.get("description")
         new_planet = Planet(name=request_body["name"],
                         description=request_body["description"])
 
