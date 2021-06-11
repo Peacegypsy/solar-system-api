@@ -28,3 +28,17 @@ def get_one_planet(app):
     jupiter = Planet(name="Jupiter",description="An amazing planet of incredible size.")
     db.session.add_all([jupiter])
     db.session.commit()    
+    
+@pytest.fixture
+def get_all_planets(app):
+    earth = Planet(name="Earth",description="An incredible beauty of blue and green.")
+    venus = Planet(name="Venus",description="The planet of love.")
+    neptune = Planet(name="Neptune",description="Named after the ruler of the seas.")
+    db.session.add_all([earth,venus,neptune])
+    db.session.commit()
+    
+@pytest.fixture
+def create_one_planet(app):
+    pluto = Planet(name="Pluto",description="Some might say its not a planet but we disagree.")
+    db.session.add_all([pluto])
+    db.session.commit()
